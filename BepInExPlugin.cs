@@ -10,7 +10,7 @@ using Debug = UnityEngine.Debug;
 
 namespace ExtendedPlayerInventory
 {
-    [BepInPlugin("aedenthorn.ExtendedPlayerInventory", "Extended Player Inventory", "0.3.3")]
+    [BepInPlugin("aedenthorn.ExtendedPlayerInventory", "Extended Player Inventory", "0.4.1")]
     public class BepInExPlugin : BaseUnityPlugin
     {
         private static BepInExPlugin context;
@@ -69,7 +69,7 @@ namespace ExtendedPlayerInventory
             nexusID.Value = 1356;
 
 
-            extraRows = Config.Bind<int>("Toggles", "ExtraRows", 5, "Number of extra ordinary rows.");
+            extraRows = Config.Bind<int>("Toggles", "ExtraRows", 0, "Number of extra ordinary rows.");
             addEquipmentRow = Config.Bind<bool>("Toggles", "AddEquipmentRow", true, "Add special row for equipped items and quick slots.");
             displayEquipmentRowSeparate = Config.Bind<bool>("Toggles", "DisplayEquipmentRowSeparate", true, "Display equipment and quickslots in their own area.");
 
@@ -442,10 +442,10 @@ namespace ExtendedPlayerInventory
             }
             t.GetComponent<Text>().enabled = true;
             t.GetComponent<Text>().text = value;
+            t.GetComponent<RectTransform>().sizeDelta = new Vector2(300, 17);
             if (center)
             {
-                t.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 17);
-                t.GetComponent<RectTransform>().anchoredPosition = new Vector2(30, -10);
+                t.GetComponent<RectTransform>().anchoredPosition = new Vector2(32, -10);
             }
         }
         
