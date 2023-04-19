@@ -11,13 +11,15 @@ ExtraRows = 5
 
 [ZCurrentPositions]
 
+Quick Access: Changed the location of Quick Slots to be next to the Buff icon (dynamically configured according to your game resolution)
+
 ## Current X of Quick Slots
 # Setting type: Single
 # Default value: 9999
-quickAccessX = **Changed the location of Quick Slots to be next to the Buff icon (dynamically configured according to your game resolution)**
+quickAccessX = quickAccessX.Value = hudRoot.Find("healthpanel").GetComponent<RectTransform>().anchoredPosition.x + 170;
 
 ## Current Y of Quick Slots
 # Setting type: Single
 # Default value: 9999
-quickAccessY = **Changed the location of Quick Slots to be next to the Buff icon (dynamically configured according to your game resolution)**
+quickAccessY = quickAccessY.Value = hudRoot.Find("healthpanel").GetComponent<RectTransform>().anchoredPosition.y - 1203;
 ```
